@@ -14,7 +14,7 @@
 
 News data we got.
 
-## Example
+## Example usage
 
 ```
 uses: hirakawamizuki/collect-daily-news-action
@@ -22,3 +22,17 @@ with:
   xxx: 'xxx'
   yyy: 'xxx'
 ```
+
+## For developers
+
+### How to local run of this Dockerfile
+
+```
+$ docker image build ./ -t collect-daily-news-action
+```
+
+```
+$ docker container run --rm --name my-app collect-daily-news-action
+```
+
+Then you can check some outputs on your console.

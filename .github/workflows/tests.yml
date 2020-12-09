@@ -11,5 +11,5 @@ jobs:
       - name: Operation test
         id: test
         uses: ./  # Uses an action in the root directory
-      - name: Get the output time
+      - name: Get output
         run: echo "${{ steps.test.outputs.result }}"
