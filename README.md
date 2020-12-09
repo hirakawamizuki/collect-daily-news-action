@@ -1,4 +1,4 @@
-# collect-daily-news
+# collect-daily-news-action
 
 * This GitHub Action is to collect and output daily news from Google News RSS by using editable keywords.
 
@@ -17,7 +17,7 @@
 ## Example
 
 ```
-uses: hirakawamizuki/collect-daily-news
+uses: hirakawamizuki/collect-daily-news-action
 with:
   xxx: 'xxx'
   yyy: 'xxx'
