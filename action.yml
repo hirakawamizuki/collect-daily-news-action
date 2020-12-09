@@ -1,0 +1,8 @@
+name: 'Collect Daily News'
+description: 'Collect daily news from Google News RSS.'
+outputs:
+  result:
+    description: 'News data we got.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

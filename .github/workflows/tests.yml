@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  operation_test:
+    runs-on: ubuntu-latest
+    name: Operation test of this action
+    steps:
+    - name: Operation test
+      id: test
+      uses: ./ # Uses an action in the root directory
+    - name: Get the output time
+      run: echo "${{ steps.test.outputs.result }}"

@@ -10,9 +10,9 @@
 
 ## Output
 
-### xxx
+### `result`
 
-* xxx
+News data we got.
 
 ## Example
 
