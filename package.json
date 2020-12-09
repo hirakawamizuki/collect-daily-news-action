@@ -1,6 +1,6 @@
 {
   "name": "collect-daily-news-action",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "This GitHub Action is to collect and output daily news from Google News RSS by using editable keywords.",
   "main": "index.js",
   "scripts": {
