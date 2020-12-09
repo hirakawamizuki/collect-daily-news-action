@@ -5,8 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Operation test of this action
     steps:
-    - name: Operation test
-      id: test
-      uses: ./ # Uses an action in the root directory
-    - name: Get the output time
-      run: echo "${{ steps.test.outputs.result }}"
+      # Required to checkout when using private actions
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Operation test
+        id: test
+        uses: ./  # Uses an action in the root directory
+      - name: Get the output time
+        run: echo "${{ steps.test.outputs.result }}"
