@@ -6,5 +6,6 @@ COPY . .
 RUN ls
 RUN ls node_modules/axios
 RUN npm bin -g
+RUN npm bin
 EXPOSE 8080
 ENTRYPOINT ["./entrypoint.sh"]
