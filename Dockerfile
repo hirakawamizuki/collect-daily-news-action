@@ -1,10 +1,8 @@
-FROM node:14-alpine
+FROM node:12-alpine
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
 COPY entrypoint.sh /entrypoint.sh
-RUN touch test.txt
-RUN ls
 EXPOSE 8080
 ENTRYPOINT ["/entrypoint.sh"]
