@@ -1,6 +1,7 @@
 FROM node:12-alpine
 WORKDIR /usr/src/app
-COPY . .
+COPY package*.json ./
 RUN npm install
-EXPOSE 8080
-ENTRYPOINT ["./entrypoint.sh"]
+COPY . .
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
