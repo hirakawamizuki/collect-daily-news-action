@@ -10,7 +10,7 @@ axios({
     const json = convert.xml2js(xml, options);
     const news = json.rss.channel.item.map( data => {  // TODO: newsが配列ではない場合のハンドリング
         let item = {};
-        item["title"] = data.title._text;
+        item["title"] = data.title._text.replace("|", "");
         item["link"] = data.link._text;
         return item;
     });
