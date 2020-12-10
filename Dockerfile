@@ -4,5 +4,4 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 COPY entrypoint.sh /entrypoint.sh
-EXPOSE 8080
 ENTRYPOINT ["/entrypoint.sh"]
