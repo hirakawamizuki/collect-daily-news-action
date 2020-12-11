@@ -2,9 +2,12 @@ const axios = require('axios').default;
 const convert = require('xml-js');
 const options = {ignoreComment: true, alwaysChildren: true, compact: true};
 
+const keywords = process.argv[2] ? process.argv[2] : "GitHub";
+const googleRssUrl = `https://news.google.com/rss/search?q=${keywords}+after:2020/12/10&hl=ja&gl=JP&ceid=JP:ja`;
+
 axios({
     method: 'get',
-    url: 'https://news.google.com/rss/search?q=docker+after:2020/12/08&hl=ja&gl=JP&ceid=JP:ja',
+    url: googleRssUrl,
 }).then(function (res) {
     const xml = res.data;
     const json = convert.xml2js(xml, options);

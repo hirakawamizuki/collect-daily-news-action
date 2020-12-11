@@ -11,5 +11,7 @@ jobs:
       - name: Operation test
         id: test
         uses: ./  # Uses an action in the root directory
+        with: 
+          keywords: "GitHub"
       - name: Get output
         run: echo "${{ steps.test.outputs.result }}"
