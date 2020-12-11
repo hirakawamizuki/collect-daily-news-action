@@ -14,4 +14,12 @@ jobs:
         with: 
           keywords: "GitHub"
       - name: Get output
-        run: echo "${{ steps.test.outputs.result }}"
+        run: |
+          touch result.txt
+          echo "${{ steps.test.outputs.result }}" > result.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: result.txt
+          retention-days: 3
