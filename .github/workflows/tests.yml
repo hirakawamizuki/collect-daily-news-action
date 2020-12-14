@@ -13,13 +13,9 @@ jobs:
         uses: ./  # Uses an action in the root directory
         with: 
           keywords: "Docker"
-      - name: Get output
-        run: |
-          touch result.txt
-          echo "${{ steps.test.outputs.result }}" > result.txt
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
+      - name: Slack Notification
+        uses: tokorom/action-slack-incoming-webhook@main
+        env:
+          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          name: output
-          path: result.txt
-          retention-days: 3
+          text: ${{ steps.test.outputs.result }}
