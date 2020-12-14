@@ -27,8 +27,6 @@ axios({
     } else {
         news = [];
     }
-    console.log(keywords);
-    console.log(after);
     console.log(JSON.stringify(news));
 }).catch(function (error) {
     console.log(error);
