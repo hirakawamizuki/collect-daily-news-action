@@ -19,4 +19,10 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: ${{ steps.test.outputs.result }}
+          text: News
+          attachments: |
+            [
+              {
+                "fields": ${{ steps.test.outputs.result }}
+              }
+            ]

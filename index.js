@@ -21,7 +21,7 @@ axios({
         news = json.rss.channel.item.map( data => {
             let item = {};
             item["title"] = data.title._text.replace(/[|()]/g, "");
-            item["link"] = data.link._text;
+            item["value"] = data.link._text;
             return item;
         });    
     } else {
