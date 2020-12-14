@@ -12,7 +12,7 @@ jobs:
         id: test
         uses: ./  # Uses an action in the root directory
         with: 
-          keywords: "GitHub"
+          keywords: "Docker"
       - name: Get output
         run: |
           touch result.txt
