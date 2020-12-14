@@ -1,8 +1,15 @@
 name: 'Collect Daily News'
 description: 'Collect daily news from Google News RSS.'
+inputs:
+  keywords:
+    description: 'Multi search keywords.'
+    required: true
+    default: 'GitHub'
 outputs:
   result:
     description: 'News data we got.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args: 
+    - ${{ inputs.keywords }}

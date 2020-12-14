@@ -4,23 +4,31 @@
 
 ## Input
 
-### xxx
+### `keywords` (required)
 
-* xxx
+* Multi search keywords
+* Format: `"<keyword1>, <keyword2>, <keyword3>"`
+* e.g. `"GitHub, Docker, AWS"`
 
 ## Output
 
 ### `result`
 
-News data we got.
+* News data you got.
+* Format: json
 
 ## Example usage
 
+`.github/workflows/main.yml` sample in your repository:
+
 ```
-uses: hirakawamizuki/collect-daily-news-action
-with:
-  xxx: 'xxx'
-  yyy: 'xxx'
+  - name: Get news
+    uses: hirakawamizuki/collect-daily-news-action
+    id: get-news
+    with:
+      keywords: "GitHub, Docker, AWS"
+  - name: Get output
+    run: echo "${{ steps.get-news.outputs.result }}"
 ```
 
 ## For developers

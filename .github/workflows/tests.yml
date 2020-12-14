@@ -8,8 +8,14 @@ jobs:
       # Required to checkout when using private actions
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Operation test
+      - name: Actions test
         id: test
         uses: ./  # Uses an action in the root directory
-      - name: Get output
-        run: echo "${{ steps.test.outputs.result }}"
+        with: 
+          keywords: "AWS"
+      - name: Slack notification test
+        uses: tokorom/action-slack-incoming-webhook@main
+        env:
+          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          text: ${{ steps.test.outputs.result }}
