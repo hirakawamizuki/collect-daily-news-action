@@ -10,6 +10,12 @@
 * Format: `"<keyword1>, <keyword2>, <keyword3>"`
 * e.g. `"GitHub, Docker, AWS"`
 
+### `how-many-days` (required)
+
+* For how many days you needs news.
+* Format: `"<number>"`
+* e.g. `"7"`
+
 ## Output
 
 ### `result`
@@ -27,6 +33,7 @@
     id: get-news
     with:
       keywords: "GitHub, Docker, AWS"
+      how-many-days: "1"
   - name: Get output
     run: echo "${{ steps.get-news.outputs.result }}"
 ```

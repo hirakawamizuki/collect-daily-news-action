@@ -5,6 +5,10 @@ inputs:
     description: 'Multi search keywords.'
     required: true
     default: 'GitHub'
+  how-many-days:
+    description: 'For how many days you needs news.'
+    required: true
+    default: '1'
 outputs:
   result:
     description: 'News data we got.'
@@ -13,3 +17,4 @@ runs:
   image: 'Dockerfile'
   args: 
     - ${{ inputs.keywords }}
+    - ${{ inputs.how-many-days }}
