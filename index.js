@@ -38,7 +38,11 @@ axios({
             news = [];
         }
     }
-    console.log(JSON.stringify(news));
+    if (outputFormat == 'mrkdwn') {
+        console.log(news);
+    } else {  // dafault: json format
+        console.log(JSON.stringify(news));
+    }
 }).catch(function (error) {
     console.log(error);
 })
