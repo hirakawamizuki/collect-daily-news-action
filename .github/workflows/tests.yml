@@ -23,6 +23,15 @@ jobs:
           attachments: |
             [
               {
-                "fields": ${{ steps.test.outputs.result }}
+                "fields": [
+                  {
+                    "title": "Test1",
+                    "value": "test1"
+                  },
+                  {
+                    "title": "Test2",
+                    "value": "test2"
+                  }
+                ]
               }
             ]
