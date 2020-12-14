@@ -16,14 +16,15 @@ axios({
 }).then(function (res) {
     const xml = res.data;
     const json = convert.xml2js(xml, options);
+    const items = json.rss.channel.item;
     let news;
-    if (Array.isArray(json.rss.channel.item)){
-        news = json.rss.channel.item.map( data => {
+    if (Array.isArray(items)){
+        news = items.map(data => {
             let item = {};
             item["title"] = data.title._text.replace(/[|()]/g, "");
-            item["value"] = data.link._text;
+            item["link"] = data.link._text;
             return item;
-        });    
+        });
     } else {
         news = [];
     }
