@@ -7,8 +7,8 @@
 ### `keywords` (required)
 
 * Multi search keywords
-* Format: `"<keyword1>, <keyword2>, <keyword3>"`
-* e.g. `"GitHub Actions, Docker Hub, AWS Lambda"`
+* Format: `"<keyword1>,<keyword2>,<keyword3>"` . when each keyword includes space, please replace `+` .
+* e.g. `"GitHub+Actions,Docker+Hub,AWS+Lambda"`
 
 ### `how-many-days`
 
@@ -41,7 +41,7 @@
     uses: hirakawamizuki/collect-daily-news-action
     id: get-news
     with:
-      keywords: "GitHub Actions, Docker Hub, AWS Lambda"
+      keywords: "GitHub+Actions,Docker+Hub,AWS+Lambda"
       how-many-days: "1"
       output-format: "json"
   - name: Get output
