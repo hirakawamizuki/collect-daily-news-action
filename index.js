@@ -20,17 +20,7 @@ axios({
     const xml = res.data;
     const json = convert.xml2js(xml, options);
     const items = json.rss.channel.item;
-    let jsonOutput;
-    if (Array.isArray(items)){
-        jsonOutput = items.map(data => {
-            let item = {};
-            item['title'] = data.title._text.replace(/[|()]/g, '');
-            item['link'] = data.link._text;
-            return item;
-        });
-    } else {
-        jsonOutput = [];
-    }
+    const jsonOutput = shapeOutput.toJson(items);
     const mrkDwnOutput = shapeOutput.toMrkdwn();
 
     if (outputFormat == 'mrkdwn') {
