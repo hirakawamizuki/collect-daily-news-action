@@ -21,7 +21,7 @@ axios({
     const json = convert.xml2js(xml, options);
     const items = json.rss.channel.item;
     const jsonOutput = shapeOutput.toJson(items);
-    const mrkDwnOutput = shapeOutput.toMrkdwn();
+    const mrkDwnOutput = shapeOutput.toMrkdwn(jsonOutput);
 
     if (outputFormat == 'mrkdwn') {
         console.log(mrkDwnOutput);
