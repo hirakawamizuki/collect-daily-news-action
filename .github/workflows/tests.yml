@@ -12,7 +12,7 @@ jobs:
         id: test
         uses: ./  # Uses an action in the root directory
         with: 
-          keywords: "GitHub, Docker Hub, AWS Lambda"
+          keywords: "GitHub Actions:Docker Hub:AWS Lambda"
           how-many-days: "2"
           output-format: "mrkdwn"
       - name: Slack notification test

@@ -6,7 +6,7 @@ const date = new Date();
 const shapeOutput = require('./src/shapeOutput');
 
 // Get inputs from node command arguments
-const keywords = process.argv[2] ? process.argv[2].split(/, */).map(keyword => keyword.replace(/ /g, '+')) : ['GitHub'];
+const keywords = process.argv[2] ? process.argv[2].split(/:/).map(keyword => keyword.replace(/ /g, '+')) : ['GitHub'];
 const howManyDays = process.argv[3] ? parseInt(process.argv[3]) : 1;
 const outputFormat = process.argv[4] ? process.argv[4] : 'json';
 
