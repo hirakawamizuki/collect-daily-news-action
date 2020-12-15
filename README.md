@@ -8,19 +8,21 @@
 
 * Multi search keywords
 * Format: `"<keyword1>, <keyword2>, <keyword3>"`
-* e.g. `"GitHub, Docker, AWS"`
+* e.g. `"GitHub Actions, Docker Hub, AWS Lambda"`
 
-### `how-many-days` (required)
+### `how-many-days`
 
 * For how many days you needs news.
 * Format: `"<number>"`
+* Dafault: `"1"`
 * e.g. `"7"`
 
-### `output-format` (required)
+### `output-format`
 
 * Output format
 * Format: `"json"` or `mrkdwn`
   * mkrdwn is slack original text format
+* Dafault: `"json"`
 
 ## Output
 
@@ -28,7 +30,7 @@
 
 * News data you got.
   * News title and url link pairs
-* Format: json or mrkdwn corresponding `output-format`
+* Format: json or mrkdwn (corresponding `output-format` )
 
 ## Example usage
 
@@ -39,7 +41,7 @@
     uses: hirakawamizuki/collect-daily-news-action
     id: get-news
     with:
-      keywords: "GitHub, Docker, AWS"
+      keywords: "GitHub Actions, Docker Hub, AWS Lambda"
       how-many-days: "1"
       output-format: "json"
   - name: Get output
@@ -48,13 +50,17 @@
 
 ## For developers
 
+### How to local node run
+
+```
+$ npm install
+$ node index.js <keywords> <how-many-days> <output-format>
+```
+
 ### How to local run of this Dockerfile
 
 ```
 $ docker image build ./ -t collect-daily-news-action
-```
-
-```
 $ docker container run --rm --name my-app collect-daily-news-action
 ```
 

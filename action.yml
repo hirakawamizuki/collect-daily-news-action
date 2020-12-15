@@ -7,11 +7,11 @@ inputs:
     default: 'GitHub'
   how-many-days:
     description: 'For how many days you needs news.'
-    required: true
+    required: false
     default: '1'
   output-format:
     description: 'Output format.'
-    required: true
+    required: false
     default: 'json'
 outputs:
   result:
