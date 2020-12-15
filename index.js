@@ -20,29 +20,23 @@ axios({
     const xml = res.data;
     const json = convert.xml2js(xml, options);
     const items = json.rss.channel.item;
-    let news;
+    let jsonOutput;
     if (Array.isArray(items)){
-        if (outputFormat == 'mrkdwn') {
-            news = shapeOutput.toMrkdwn();
-        } else {  // dafault: json format
-            news = items.map(data => {
-                let item = {};
-                item['title'] = data.title._text.replace(/[|()]/g, '');
-                item['link'] = data.link._text;
-                return item;
-            });
-        }
+        jsonOutput = items.map(data => {
+            let item = {};
+            item['title'] = data.title._text.replace(/[|()]/g, '');
+            item['link'] = data.link._text;
+            return item;
+        });
     } else {
-        if (outputFormat == 'mrkdwn') {
-            news = '';
-        } else {  // dafault: json format
-            news = [];
-        }
+        jsonOutput = [];
     }
+    const mrkDwnOutput = shapeOutput.toMrkdwn();
+
     if (outputFormat == 'mrkdwn') {
-        console.log(news);
+        console.log(mrkDwnOutput);
     } else {  // dafault: json format
-        console.log(JSON.stringify(news));
+        console.log(JSON.stringify(jsonOutput));
     }
 }).catch(function (error) {
     console.log(error);
