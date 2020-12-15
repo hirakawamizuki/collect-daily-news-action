@@ -3,4 +3,4 @@
 # It does not affect performance when this action runs on pure docker container.
 npm install
 # How to pass value on this action
-echo "::set-output name=result::'$(node index.js $1 $2)'"
+echo "::set-output name=result::\"$(node index.js $1 $2 $3)\""

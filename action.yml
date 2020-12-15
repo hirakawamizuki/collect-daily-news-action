@@ -9,6 +9,10 @@ inputs:
     description: 'For how many days you needs news.'
     required: true
     default: '1'
+  output-format:
+    description: 'Output format.'
+    required: true
+    default: 'json'
 outputs:
   result:
     description: 'News data we got.'
@@ -18,3 +22,4 @@ runs:
   args: 
     - ${{ inputs.keywords }}
     - ${{ inputs.how-many-days }}
+    - ${{ inputs.output-format }}

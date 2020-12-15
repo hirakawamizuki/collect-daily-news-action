@@ -16,12 +16,19 @@
 * Format: `"<number>"`
 * e.g. `"7"`
 
+### `output-format` (required)
+
+* Output format
+* Format: `"json"` or `mrkdwn`
+  * mkrdwn is slack original text format
+
 ## Output
 
 ### `result`
 
 * News data you got.
-* Format: json
+  * News title and url link pairs
+* Format: json or mrkdwn corresponding `output-format`
 
 ## Example usage
 
@@ -34,6 +41,7 @@
     with:
       keywords: "GitHub, Docker, AWS"
       how-many-days: "1"
+      output-format: "json"
   - name: Get output
     run: echo "${{ steps.get-news.outputs.result }}"
 ```
