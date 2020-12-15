@@ -17,7 +17,7 @@ const googleRssUrl = `https://news.google.com/rss/search?q=${keywords[0]}+${afte
 axios({
     method: 'get',
     url: googleRssUrl,
-}).then(function (res) {
+}).then(res => {
     const xml = res.data;
     const json = convert.xml2js(xml, options);
     const items = json.rss.channel.item;
@@ -29,6 +29,6 @@ axios({
     } else {  // dafault: json format
         console.log(JSON.stringify(jsonOutput));
     }
-}).catch(function (error) {
+}).catch(error => {
     console.log(error);
 })
