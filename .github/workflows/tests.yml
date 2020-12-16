@@ -12,8 +12,8 @@ jobs:
         id: test
         uses: ./  # Uses an action in the root directory
         with: 
-          keywords: "Docker"
-          how-many-days: "1"
+          keywords: "GitHub+Actions,Docker+Hub,AWS+Lambda"
+          how-many-days: "5"
           output-format: "mrkdwn"
       - name: Slack notification test
         uses: tokorom/action-slack-incoming-webhook@main
