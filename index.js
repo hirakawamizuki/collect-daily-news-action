@@ -12,7 +12,7 @@ const outputFormat = process.argv[4] ? process.argv[4] : 'json';
 
 // Creeate google rss url
 const after = `after:${dateFormat(date.setDate(date.getDate() - howManyDays), 'yyyy-mm-dd')}`;  // e.g. after = 'after:2020-12-01'
-const googleRssUrl = `https://news.google.com/rss/search?q=${keywords[0]}+${after}&hl=ja&gl=JP&ceid=JP:ja`;
+const googleRssUrl = encodeURI(`https://news.google.com/rss/search?q=${keywords[0]}+${after}&hl=ja&gl=JP&ceid=JP:ja`);
 
 axios({
     method: 'get',
