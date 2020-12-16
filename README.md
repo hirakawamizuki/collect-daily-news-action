@@ -9,7 +9,7 @@
 * Multi search keywords
 * Format: `"<keyword1>,<keyword2>,<keyword3>"`
   * Each keyword is separated by `,` .
-  * when keywords include space symbol, please replace all ` ` by `+` .
+  * When keywords include space symbol, please replace all ` ` by `+` .
 * e.g. `"GitHub+Actions,Docker+Hub,AWS+Lambda"`
   * Then you received `GitHub Actions` news, `Docker Hub` news and `AWS Lambda` news.
 

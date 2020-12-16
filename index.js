@@ -26,7 +26,7 @@ const getNews = async (keyword, after) => {
 
 // Output news data by using all keywords
 Promise.all(keywords.map(async keyword => await getNews(keyword, after)))
-.then((res) => {
+.then(res => {
     const jsonOutput = res.reduce((array1, array2) => array1.concat(array2));
     if (outputFormat == 'mrkdwn') {
         const mrkDwnOutput = shapeOutput.toMrkdwn(jsonOutput);
