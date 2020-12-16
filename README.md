@@ -7,7 +7,9 @@
 ### `keywords` (required)
 
 * Multi search keywords
-* Format: `"<keyword1>,<keyword2>,<keyword3>"` . when each keyword includes space, please replace `+` .
+* Format: `"<keyword1>,<keyword2>,<keyword3>"`
+  * Each keyword is separated by `,` .
+  * when keywords include space symbol, please replace all ` ` by `+` .
 * e.g. `"GitHub+Actions,Docker+Hub,AWS+Lambda"`
 
 ### `how-many-days`
