@@ -57,14 +57,14 @@
 
 ```
 $ npm install
-$ node index.js <keywords> <how-many-days> <output-format>
+$ node index.js
 ```
 
-### How to local run of this Dockerfile
+### How to build
 
 ```
-$ docker image build ./ -t collect-daily-news-action
-$ docker container run --rm --name my-app collect-daily-news-action
+$ npm run build
 ```
 
-Then you can check some outputs on your console.
+* Then, `dist/index.js` is created.
+* This file need to push to GitHub repository.
