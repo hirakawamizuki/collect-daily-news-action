@@ -9,6 +9,7 @@
   "author": "hirakawamizuki",
   "repository": "https://github.com/hirakawamizuki/collect-daily-news-action",
   "dependencies": {
+    "@actions/core": "^1.2.6",
     "axios": "^0.21.0",
     "dateformat": "^4.3.1",
     "xml-js": "^1.6.11"

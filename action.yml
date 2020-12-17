@@ -17,9 +17,5 @@ outputs:
   result:
     description: 'News data we got.'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args: 
-    - ${{ inputs.keywords }}
-    - ${{ inputs.how-many-days }}
-    - ${{ inputs.output-format }}
+  using: 'node12'
+  main: 'index.js'
