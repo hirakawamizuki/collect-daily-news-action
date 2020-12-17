@@ -67,4 +67,4 @@ $ npm run build
 ```
 
 * Then, `dist/index.js` is created.
-* This file need to push to GitHub repository.
+* You need to push it to GitHub repository.
