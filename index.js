@@ -31,7 +31,7 @@ Promise.all(keywords.map(async keyword => await getNews(keyword, after)))
     const jsonOutput = res.reduce((array1, array2) => array1.concat(array2));
     if (outputFormat == 'mrkdwn') {
         const mrkDwnOutput = shapeOutput.toMrkdwn(jsonOutput);
-        core.setOutput("result", `"${mrkDwnOutput}"`);
+        core.setOutput("result", `\"${mrkDwnOutput}\"`);
     } else {  // dafault: json format
         core.setOutput("result", JSON.stringify(jsonOutput));
     }
