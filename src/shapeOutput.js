@@ -17,7 +17,7 @@ exports.toMrkdwn = (jsonArray) => {
     let mrkdwn;
     if (Array.isArray(jsonArray)) {
         const links = jsonArray.map(item => `<${item.link}|${item.title}>`);
-        mrkdwn = links.join("'\n'\n")        
+        mrkdwn = links.join("\n\n")        
     } else {
         mrkdwn = "";
     }
