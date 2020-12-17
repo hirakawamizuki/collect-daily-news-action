@@ -4,14 +4,18 @@
   "description": "This GitHub Action is to collect and output daily news from Google News RSS by using editable keywords.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ncc build index.js"
   },
   "author": "hirakawamizuki",
   "repository": "https://github.com/hirakawamizuki/collect-daily-news-action",
   "dependencies": {
+    "@actions/core": "^1.2.6",
     "axios": "^0.21.0",
     "dateformat": "^4.3.1",
     "xml-js": "^1.6.11"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@vercel/ncc": "^0.25.1"
+  }
 }
