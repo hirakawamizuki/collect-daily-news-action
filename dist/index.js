@@ -40,7 +40,7 @@ Promise.all(keywords.map(async keyword => await getNews(keyword, after)))
         const mrkDwnOutput = shapeOutput.toMrkdwn(jsonOutput);
         core.setOutput("result", mrkDwnOutput);
     } else {  // dafault: json format
-        core.setOutput("result", jsonOutput);
+        core.setOutput("result", JSON.stringify(jsonOutput));
     }
 }).catch(error => {
     core.setFailed(error.message);
@@ -5427,7 +5427,7 @@ exports.toMrkdwn = (jsonArray) => {
     let mrkdwn;
     if (Array.isArray(jsonArray)) {
         const links = jsonArray.map(item => `<${item.link}|${item.title}>`);
-        mrkdwn = links.join('\\n\\n')        
+        mrkdwn = links.join("\n\n")        
     } else {
         mrkdwn = "";
     }
