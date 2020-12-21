@@ -7,7 +7,7 @@ const date = new Date();
 const shapeOutput = require('./src/shapeOutput');
 
 // Get inputs
-const keywords = core.getInput('keywords') ? core.getInput('keywords').split(/,/) : ['GitHub'];
+const keywords = core.getInput('keywords') ? core.getInput('keywords').split(/,/) : ['Docker','GitHub+Actions','GitHub+Container+Registry','Docker+Hub','Amazon+ECR','CentOS+終了','アジャイル'];
 const howManyDays = core.getInput('how-many-days') ? parseInt(core.getInput('how-many-days')) : 1;
 const outputFormat = core.getInput('output-format') ? core.getInput('output-format') : 'json';
 

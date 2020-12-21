@@ -10,7 +10,7 @@ exports.toJson = (news) => {
         let item = {};
         item['title'] = news.title._text.replace(/[|()]/g, '');
         item['link'] = news.link._text;
-        return item;
+        return [item];
     } else {
         return [];
     }
